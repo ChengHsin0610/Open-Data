@@ -6,7 +6,7 @@
     <title>Data Story - 高雄市左營區高齡人口樣態</title>
 </head>
 <body>
-    <h1>My data story: 
+    <h1>My data story:長照A31占比最多，身心障礙A21的人數大大超過身心障礙A22，行動不便之身心障礙者比例較少，而長照A33因人數少所以在圖表上不明顯，比例十分懸殊。
     <iframe src="https://plotdb.io/v/chart/37100" 
             width="100%" 
             height="600px" 
