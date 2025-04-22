@@ -27,14 +27,14 @@
             padding: 40px;
             color: white;
             font-family: Arial, sans-serif;
-            flex: 1;
+            flex: 0.4; /* 調整文字區域的寬度 */
             text-align: center;
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
         .map-box {
-            flex: 1;
+            flex: 0.6; /* 調整地圖區域的寬度 */
         }
         iframe {
             width: 100%;
@@ -46,8 +46,8 @@
 <body>
     <div class="container">
         <div class="text-box">
-            <h1>這是高雄市村里級熱圖</h1>
-            <h2>點擊縣市中的鄉鎮再顯示村里人數。資料以村里為主。</h2>
+            <h1>哈囉😊這是高雄市村里級熱圖</h1>
+            <h2>你可以點擊縣市中的鄉鎮，它會顯示村里人數哦!</h2>
         </div>
         <div class="map-box">
             <iframe src="https://plotdb.io/v/chart/37200" allowfullscreen="true"></iframe>
