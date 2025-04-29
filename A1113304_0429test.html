@@ -18,64 +18,53 @@
         .container {
             display: flex;
             flex-direction: column;
-            width: 80%;
+            width: 100%;
+            height: 100%;
             background-color: white;
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
         }
         .text-box {
             background-color: #AFEEEE; /* 更淺的綠色 */
-            padding: 10px;
+            padding: 20px;
             color: white;
             text-align: center;
-            flex: 0.2; /* 調整文字區域的比例，縮小 */
+        }
+        .map-container {
+            display: flex;
+            flex: 1;
         }
         .map-box {
-            flex: 1.8; /* 調整地圖區域的比例，放大 */
-            height: 60vh; /* 增加地圖區域的高度 */
+            flex: 1;
+            height: 70%; /* 調整地圖區域的高度 */
+            margin: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
         }
         iframe {
             width: 100%;
             height: 100%;
             border: none;
         }
-        .description {
-            padding: 10px;
-            text-align: center;
-            background-color: #f8f8f8;
-            border-top: 1px solid #ddd;
-        }
     </style>
 </head>
 <body>
-    <!-- A圖 -->
     <div class="container">
+        <!-- 文字區域 -->
         <div class="text-box">
-            <h1>哈囉😊這是高雄市村里級熱圖</h1>
-            <h2>你可以點擊縣市中的各區域</h2>
-            <h2>可以看到各區65-80歲的人口數喔</h2>
+            <h1>哈囉😊這是高雄市村里級熱圖，你可以點擊縣市中的各區域看到各區人口數。粉色圖表是65-80歲的，藍色圖表是80歲以上。</h1>
+            <h2>在65-80歲之中，鳳山區與三民區明顯是最多人口的；但在80歲以上的圖表中，明顯看出不只兩個區域人口眾多，岡山、楠梓等區人數也多，我想這是因為高齡化之下，許多長者可以活得更久，因此80歲以上的長者居多。</h2>
         </div>
-        <div class="map-box">
-            <iframe src="https://plotdb.io/v/chart/37343" allowfullscreen="true"></iframe>
-        </div>
-        <div class="description">
-            <p>這張圖是高雄市各區域65-80歲人口數分布圖。</p>
-        </div>
-    </div>
-
-    <!-- B圖 -->
-    <div class="container">
-        <div class="text-box">
-            <h1>這是另一張分析圖</h1>
-            <h2>展示了各區80歲以上的人口數</h2>
-        </div>
-        <div class="map-box">
-            <iframe src="https://plotdb.io/v/chart/37362" allowfullscreen="true"></iframe>
-        </div>
-        <div class="description">
-            <p>這張圖是高雄市各區域80歲以上人口數分布圖。</p>
+        <!-- 圖表區域 -->
+        <div class="map-container">
+            <!-- A圖 -->
+            <div class="map-box">
+                <iframe src="https://plotdb.io/v/chart/37343" allowfullscreen="true"></iframe>
+            </div>
+            <!-- B圖 -->
+            <div class="map-box">
+                <iframe src="https://plotdb.io/v/chart/37362" allowfullscreen="true"></iframe>
+            </div>
         </div>
     </div>
 </body>
