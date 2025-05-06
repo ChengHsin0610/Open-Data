@@ -1,71 +1,137 @@
+<!DOCTYPE html>
 <html lang="zh">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ChengHsin design:kcg-113-12.html</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f0f0f0;
-            font-family: Arial, sans-serif;
-        }
-        .container {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            height: 100%;
-            background-color: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-        }
-        .text-box {
-            background-color: #AFEEEE; /* 更淺的綠色 */
-            padding: 20px;
-            color: white;
-            text-align: center;
-        }
-        .map-container {
-            display: flex;
-            flex: 1;
-        }
-        .map-box {
-            flex: 1;
-            height: 70%; /* 調整地圖區域的高度 */
-            margin: 10px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-        }
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ChengHsin design:kcg-113-12.html</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", sans-serif;
+      background-color: #f0f0f0;
+    }
+
+    .main-wrapper {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .card {
+      background-color: #ffffff;
+      border-radius: 15px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      margin-bottom: 30px;
+    }
+
+    .card-header {
+      background-color: #4ba8c7;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .card-header h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    .card-image img {
+      width: 100%;
+      display: block;
+    }
+
+    .card-content {
+      padding: 20px 30px;
+      line-height: 1.8;
+      color: #333;
+    }
+
+    .map-section {
+      background-color: white;
+      border-radius: 15px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+    }
+
+    .map-text {
+      background-color: #AFEEEE;
+      color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .map-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: space-between;
+    }
+
+    .map-box {
+      flex: 1 1 48%;
+      height: 400px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    @media (max-width: 768px) {
+      .map-box {
+        flex: 1 1 100%;
+      }
+
+      .card-content {
+        padding: 20px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <!-- 文字區域 -->
-        <div class="text-box">
-            <h1>哈囉😊這是高雄市村里級熱圖，你可以點擊縣市中的各區域看到各區人口數。粉色圖表是65-80歲的，藍色圖表是80歲以上。</h1>
-            <h2>在65-80歲之中，鳳山區與三民區明顯是最多人口的；但在80歲以上的圖表中，明顯看出不只兩個區域人口眾多，岡山、楠梓等區人數也多，我想這是因為高齡化之下，許多長者可以活得更久，因此80歲以上的長者居多。</h2>
-        </div>
-        <!-- 圖表區域 -->
-        <div class="map-container">
-            <!-- A圖 -->
-            <div class="map-box">
-                <iframe src="https://plotdb.io/v/chart/37343" allowfullscreen="true"></iframe>
-            </div>
-            <!-- B圖 -->
-            <div class="map-box">
-                <iframe src="https://plotdb.io/v/chart/37362" allowfullscreen="true"></iframe>
-            </div>
-        </div>
+  <div class="main-wrapper">
+
+    <!-- 卡片區：集點子 -->
+    <div class="card">
+      <div class="card-header">
+        <h1>集點子：行動書車與讀書會 - 打造高齡友善閱讀空間</h1>
+      </div>
+      <div class="card-image">
+        <img src="社區行動書車與讀書會.png" alt="社區行動書車與讀書會">
+      </div>
+      <div class="card-content">
+        <p>設立社區行動書車與讀書會，讓長者方便接觸閱讀資源，也可讓長者成為社區講師實現自我價值，透過分享與交流增強社交情感。</p>
+        <p>書籍類型可涵蓋安全與健康等主題，提升長者日常能力；同時也能提供幼童繪本，由長者帶領孩童閱讀，增進祖孫情感。</p>
+        <p>藉由讀書會讓書車志工與長者作伴，達到心靈層面的交流。偶爾邀請消防員進行安全宣導，也能確保長者居家安全。</p>
+        <p>此外可鼓勵長者寫作，將閱讀心得或對人生的感悟發表於網路，讓長者成為「不老作家」。書車志工也可協助拍攝長者在讀書會時的點點滴滴，留給長者特別的回憶，更可上傳到網上帶動更多長者共讀。</p>
+        <p>希望結合長照服務，提供無障礙空間，讓身心障礙者也能就近參與。透過完善規劃打造高齡友善、連通互助的社區閱讀環境。</p>
+      </div>
     </div>
+
+    <!-- 地圖區 -->
+    <div class="map-section">
+      <div class="map-text">
+        <h1>哈囉😊這是高雄市村里級熱圖，你可以點擊縣市中的各區域看到各區人口數。</h1>
+        <h2>粉色圖表是65-80歲的，藍色圖表是80歲以上。<br>在65-80歲中，鳳山區與三民區人口最多；而80歲以上的長者則在更多區域（如岡山、楠梓）廣泛分布，顯示高齡化持續。</h2>
+      </div>
+      <div class="map-container">
+        <div class="map-box">
+          <iframe src="https://plotdb.io/v/chart/37343" allowfullscreen="true"></iframe>
+        </div>
+        <div class="map-box">
+          <iframe src="https://plotdb.io/v/chart/37362" allowfullscreen="true"></iframe>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </body>
 </html>
+
