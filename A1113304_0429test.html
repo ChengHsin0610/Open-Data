@@ -18,6 +18,26 @@
       padding: 20px;
     }
 
+    nav {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    nav a {
+      display: inline-block;
+      margin: 0 10px;
+      padding: 10px 15px;
+      background-color: #4ba8c7;
+      color: #fff;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #3a93b3;
+    }
+
     .card, .map-section {
       background-color: #ffffff;
       border-radius: 15px;
@@ -49,17 +69,21 @@
       color: #333;
     }
 
+    .card-content p {
+      margin-bottom: 1.2em;
+    }
+
     .map-container {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-}
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
 
     .map-item {
       display: flex;
       flex-direction: column;
     }
-    
+
     .map-box {
       width: 100%;
       height: 360px;
@@ -67,7 +91,7 @@
       border-radius: 10px;
       overflow: hidden;
     }
-    
+
     .map-description {
       margin-top: 10px;
       font-size: 15px;
@@ -78,7 +102,6 @@
       border-radius: 8px;
     }
 
-
     iframe {
       width: 100%;
       height: 100%;
@@ -87,7 +110,7 @@
 
     @media (max-width: 768px) {
       .map-box {
-        flex: 1 1 100%;
+        height: 280px;
       }
 
       .card-content {
@@ -98,38 +121,56 @@
 </head>
 <body>
   <div class="main-wrapper">
+    
+    <!-- 頁面導覽 -->
+    <nav>
+      <a href="#map-age65">65-79歲熱力圖</a>
+      <a href="#map-age80">80歲以上熱力圖</a>
+      <a href="#idea">集點子構想</a>
+    </nav>
+
     <!-- 地圖區 -->
-  <div class="map-section">
-    <div class="map-header">
-      <h1>哈囉😊這是高雄市村里級熱圖，你可以點擊縣市中的各區域看到各區人口數。</h1>
-    </div>
-    <div class="map-container">
-      
-      <!-- 第一張圖 -->
-      <div class="map-item">
-        <div class="map-box">
-          <iframe src="https://plotdb.io/v/chart/37343" allowfullscreen="true"></iframe>
+    <div class="map-section">
+      <div class="map-header">
+        <h1>哈囉😊這是高雄市村里級熱圖，你可以點擊縣市中的各區域看到各區人口數。</h1>
+      </div>
+      <div class="map-container">
+        
+        <!-- 第一張圖 -->
+        <div class="map-item" id="map-age65">
+          <div class="map-box">
+            <iframe src="https://plotdb.io/v/chart/37343" allowfullscreen="true"></iframe>
+          </div>
+          <div class="map-description">
+            此為65-79歲的年齡熱力圖，人口多集中在南高雄。當我們點進人口數較多的行政區時，可發現同區不同里的人口數差異極大。<br><br>
+            例如：
+            <ul>
+              <li>三民區是高雄繁華熱鬧的區域之一，但其中的川東里人口數僅237，連Q1都不到。</li>
+              <li>鳥松區雖整體人口偏高，但內部里別差異仍大。</li>
+            </ul>
+            <p>此圖顯示即便在相對高齡集中的行政區內，人口分布仍呈現高度不均，對政策與資源投放是一大挑戰，必須進一步考量到「里」層級的精準需求。</p>
+          </div>
         </div>
-        <div class="map-description">
-          此為65-79歲的年齡熱力圖，人口多集中在南高雄，當我們點進人口數較多的行政區時，可發現同區不同里的人口數差異極大，以三民區為例，三民區是高雄繁華熱鬧的區域之一，但其中的川東里人口數為237，連Q1都不到。另外像65-79歲人數最多的鳥松區也有同樣情況，雖然整體人口偏高，但內部的差異顯著，此圖顯示即便在相對高齡集中的行政區內，人口分布仍呈現高度不均，這對高齡政策的規劃與資源投放提出挑戰，必須進一步考量到里層級的精準需求。
+
+        <!-- 第二張圖 -->
+        <div class="map-item" id="map-age80">
+          <div class="map-box">
+            <iframe src="https://plotdb.io/v/chart/37362" allowfullscreen="true"></iframe>
+          </div>
+          <div class="map-description">
+            此為80歲以上的年齡熱力圖，除了南高雄外，美濃區人口數也明顯較多。
+            <ul>
+              <li>吉和里人口數為100，甚至大於Q2，顯示非都會地區的高齡集中現象。</li>
+              <li>鳥松區依然為80歲以上人口最多的區域，尤以大華里與鳥松里最為密集。</li>
+            </ul>
+            <p>這些熱區提醒我們，資源配置不能僅以都市分布為依據，需重視交通、就醫可及性與在地照顧系統的建構，以打造更均衡且高齡友善的社區。</p>
+          </div>
         </div>
       </div>
-  
-      <!-- 第二張圖 -->
-      <div class="map-item">
-        <div class="map-box">
-          <iframe src="https://plotdb.io/v/chart/37362" allowfullscreen="true"></iframe>
-        </div>
-        <div class="map-description">
-          此為80歲以上的年齡熱力圖，除了南高雄外，美濃區的人口數明顯較多，美濃區人口最少的吉和里人口數為100，大於Q2，可見美濃的80歲以上人口與南高雄繁華區域是差不多的。而鳥松區依然是人口數最多，可見鳥松區是最需要長者資源與照護的地方，尤其在高齡人口集中里別，如大華里與鳥松里，更應加強設置社區關懷據點與醫療資源。同時，像美濃這樣的非都會型地區卻有高齡人口集中的現象，也提醒我們在資源規劃時不能僅依照都市熱區分布來配置，而應深入考察各區的實際高齡結構，特別是交通、就醫可及性與在地照顧系統是否完善，以利發展出更均衡且符合在地需求的高齡友善環境。
-        </div>
-      </div>
-  
     </div>
-  </div>
 
     <!-- 卡片區：集點子 -->
-    <div class="card">
+    <div class="card" id="idea">
       <div class="card-header">
         <h1>集點子：行動書車與讀書會 - 打造高齡友善閱讀空間</h1>
       </div>
