@@ -50,24 +50,34 @@
     }
 
     .map-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+    .map-item {
       display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: space-between;
+      flex-direction: column;
     }
-
+    
     .map-box {
-      flex: 1 1 48%;
-      height: 400px;
+      width: 100%;
+      height: 360px;
       box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      overflow: hidden;
     }
-
+    
     .map-description {
       margin-top: 10px;
-      font-size: 14px;
-      color: #555;
-      line-height: 1.6;
+      font-size: 15px;
+      color: #444;
+      line-height: 1.8;
+      padding: 15px;
+      background-color: #f9f9f9;
+      border-radius: 8px;
     }
+
 
     iframe {
       width: 100%;
@@ -89,29 +99,34 @@
 <body>
   <div class="main-wrapper">
     <!-- 地圖區 -->
-    <div class="map-section">
-      <div class="map-header">
-        <h1>哈囉😊這是高雄市村里級熱圖，你可以點擊縣市中的各區域看到各區人口數。</h1>
-      </div>
-      <div class="map-container">
-        <div style="flex: 1 1 48%;">
-          <div class="map-box">
-            <iframe src="https://plotdb.io/v/chart/37343" allowfullscreen="true"></iframe>
-          </div>
-          <div class="map-description">
-            此為65-79歲的年齡熱力圖，人口多集中在南高雄，當我們點進人口數較多的行政區時，可發現同區不同里的人口數差異極大，以三民區為例，三民區是高雄繁華熱鬧的區域之一，但其中的川東里人口數為237，連Q1都不到。此為65-79歲的年齡熱力圖，人口多集中在南高雄，當我們點進人口數較多的行政區時，可發現同區不同里的人口數差異極大，以三民區為例，三民區是高雄繁華熱鬧的區域之一，但其中的川東里人口數為237，連Q1都不到。另外像65-79歲人數最多的鳥松區也有同樣情況，雖然整體人口偏高，但內部的差異顯著，此圖顯示即便在相對高齡集中的行政區內，人口分布仍呈現高度不均，這對高齡政策的規劃與資源投放提出挑戰，必須進一步考量到里層級的精準需求。
-          </div>
-        </div>
-        <div style="flex: 1 1 48%;">
-          <div class="map-box">
-            <iframe src="https://plotdb.io/v/chart/37362" allowfullscreen="true"></iframe>
-          </div>
-          <div class="map-description">
-            此為80歲以上的年齡熱力圖，除了南高雄外，美濃區的人口數明顯較多，美濃區人口最少的吉和里人口數為100，大於Q2，可見美濃的80歲以上人口與南高雄繁華區域是差不多的。而鳥松區依然是人口數最多，可見鳥松區是最需要長者資源與照護的地方，尤其在高齡人口集中里別，如大華里與鳥松里，更應加強設置社區關懷據點與醫療資源。同時，像美濃這樣的非都會型地區卻有高齡人口集中的現象，也提醒我們在資源規劃時不能僅依照都市熱區分布來配置，而應深入考察各區的實際高齡結構，特別是交通、就醫可及性與在地照顧系統是否完善，以利發展出更均衡且符合在地需求的高齡友善環境。
-          </div>
-        </div>
-      </div>
+  <div class="map-section">
+    <div class="map-header">
+      <h1>哈囉😊這是高雄市村里級熱圖，你可以點擊縣市中的各區域看到各區人口數。</h1>
     </div>
+    <div class="map-container">
+      
+      <!-- 第一張圖 -->
+      <div class="map-item">
+        <div class="map-box">
+          <iframe src="https://plotdb.io/v/chart/37343" allowfullscreen="true"></iframe>
+        </div>
+        <div class="map-description">
+          此為65-79歲的年齡熱力圖，人口多集中在南高雄，當我們點進人口數較多的行政區時，可發現同區不同里的人口數差異極大，以三民區為例，三民區是高雄繁華熱鬧的區域之一，但其中的川東里人口數為237，連Q1都不到。另外像65-79歲人數最多的鳥松區也有同樣情況，雖然整體人口偏高，但內部的差異顯著，此圖顯示即便在相對高齡集中的行政區內，人口分布仍呈現高度不均，這對高齡政策的規劃與資源投放提出挑戰，必須進一步考量到里層級的精準需求。
+        </div>
+      </div>
+  
+      <!-- 第二張圖 -->
+      <div class="map-item">
+        <div class="map-box">
+          <iframe src="https://plotdb.io/v/chart/37362" allowfullscreen="true"></iframe>
+        </div>
+        <div class="map-description">
+          此為80歲以上的年齡熱力圖，除了南高雄外，美濃區的人口數明顯較多，美濃區人口最少的吉和里人口數為100，大於Q2，可見美濃的80歲以上人口與南高雄繁華區域是差不多的。而鳥松區依然是人口數最多，可見鳥松區是最需要長者資源與照護的地方，尤其在高齡人口集中里別，如大華里與鳥松里，更應加強設置社區關懷據點與醫療資源。同時，像美濃這樣的非都會型地區卻有高齡人口集中的現象，也提醒我們在資源規劃時不能僅依照都市熱區分布來配置，而應深入考察各區的實際高齡結構，特別是交通、就醫可及性與在地照顧系統是否完善，以利發展出更均衡且符合在地需求的高齡友善環境。
+        </div>
+      </div>
+  
+    </div>
+  </div>
 
     <!-- 卡片區：集點子 -->
     <div class="card">
